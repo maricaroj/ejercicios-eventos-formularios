@@ -47,18 +47,18 @@
 
                                             // EJERCICIO 3
 
-// const texto = document.getElementById('texto');
-// const crear = document.getElementById('crear');
-// const lista = document.getElementById('lista');
+const texto = document.getElementById('texto');
+const crear = document.getElementById('crear');
+const lista = document.getElementById('lista');
 
-// crear.addEventListener('click', ()=>{
-//     if(texto.value !== ''){
-//         const li = document.createElement('li');
-//         li.innerHTML = texto.value;
-//         lista.appendChild(li);
-//         texto.value = '';
-//     };
-// });
+crear.addEventListener('click', ()=>{
+    if(texto.value !== ''){
+        const li = document.createElement('li');
+        li.innerHTML = texto.value;
+        lista.appendChild(li);
+        texto.value = '';
+    };
+});
 
 
                                             // EJERCICIO 4 
@@ -246,8 +246,8 @@
 
                                             // EJERCICIO 10   RESPUESTA PARCIAL
 
-const img = document.getElementsByTagName('img');
-const checkBox = document.getElementsByTagName('input');
+// const img = document.getElementsByTagName('img');
+// const checkBox = document.getElementsByTagName('input');
 
 // Array.from(checkBox).forEach(input=>{
 //     input.addEventListener('change', ()=>{
@@ -449,144 +449,144 @@ const checkBox = document.getElementsByTagName('input');
 
                                             // EJERCICIO 13
 
-const nombre = document.getElementById('nombre');
-const apellido = document.getElementById('apellido');
-const dni = document.getElementById('dni');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('repetir');
-const boton = document.getElementById('boton');
+// const nombre = document.getElementById('nombre');
+// const apellido = document.getElementById('apellido');
+// const dni = document.getElementById('dni');
+// const email = document.getElementById('email');
+// const password = document.getElementById('password');
+// const password2 = document.getElementById('repetir');
+// const boton = document.getElementById('boton');
 
-const small = document.getElementsByTagName('small');
-const check = document.getElementById('checkbox');
-let valorPassword;
-
-
-
-// Expresiones regulares
-const validarTexto = (texto) => {
-    const regExNombre = /^([A-Z a-z]+[\s]*)+$/;
-    return regExNombre.test(texto);
-};
-const validarNumero = (numero) => {
-    const regExNumero = /^([0-9]*)+$/;
-    return regExNumero.test(numero);
-};
-const validarEmail = (email) => {
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return regex.test(email.toLowerCase())
-};
-const validarPassword = (password) => {
-    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm
-    return regex.test(password)
-};
+// const small = document.getElementsByTagName('small');
+// const check = document.getElementById('checkbox');
+// let valorPassword;
 
 
-nombre.addEventListener('keyup', ()=>{
-        const valorNombre = nombre.value;
-        const validacionNombre = validarTexto(valorNombre);
-        if(valorNombre.length > 0){
-            if(validacionNombre === true){
-                nombre.style.border = '1px solid green';
-                small[0].innerHTML = ' ';
-            } else{
-                nombre.style.border = '1px solid red';
-                small[0].innerHTML = `Solo puede contener texto`;
-            }
-        }else {
-            nombre.style.border = '1px solid black';
-            small[0].innerHTML = ' ';
-        }
-});
 
-apellido.addEventListener('keyup', ()=>{
-    const valorApellido = apellido.value;
-    const validacionNombre = validarTexto(valorApellido);
-    if(valorApellido.length > 0){
-        if(validacionNombre === true){
-            apellido.style.border = '1px solid green';
-            small[1].innerHTML = ' ';
-        } else{
-            apellido.style.border = '1px solid red';
-            small[1].innerHTML = `Solo puede contener texto`;
-        }
-    }else {
-        apellido.style.border = '1px solid black';
-        small[1].innerHTML = ' ';
-    }
-});
-
-dni.addEventListener('keyup', ()=>{
-    const valorDni = dni.value;
-    const validacionDni = validarNumero(valorDni);
-    if(valorDni.length > 0){
-        if(validacionDni === true && valorDni.length == 8){
-            dni.style.border = '1px solid green';
-            small[2].innerHTML = ' ';
-        } else{
-            dni.style.border = '1px solid red';
-            small[2].innerHTML = `Debe contener 8 números`;
-        }
-    }else {
-        dni.style.border = '1px solid black';
-        small[2].innerHTML = ' ';
-    }
-});
-
-email.addEventListener('keyup', ()=>{
-    const valorEmail = email.value;
-    const validacionEmail = validarEmail(valorEmail);
-    if(valorEmail.length > 0){
-        if(validacionEmail === true){
-            email.style.border = '1px solid green';
-            small[3].innerHTML = '';
-        }else{
-            email.style.border = '1px solid red';
-            small[3].innerHTML = `El formato del email no es válido`;
-        }
-    }else {
-        email.style.border = '1px solid black';
-        small[3].innerHTML = '';
-    }
-})
+// // Expresiones regulares
+// const validarTexto = (texto) => {
+//     const regExNombre = /^([A-Z a-z]+[\s]*)+$/;
+//     return regExNombre.test(texto);
+// };
+// const validarNumero = (numero) => {
+//     const regExNumero = /^([0-9]*)+$/;
+//     return regExNumero.test(numero);
+// };
+// const validarEmail = (email) => {
+//     const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//     return regex.test(email.toLowerCase())
+// };
+// const validarPassword = (password) => {
+//     const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm
+//     return regex.test(password)
+// };
 
 
-password.addEventListener('change', ()=>{
-    valorPassword = password.value;
-    const validacionPassword = validarPassword(valorPassword);
-    if(valorPassword.length > 0){
-        if(validacionPassword === true){
-            password.style.border = '1px solid green';
-            small[4].innerHTML = '';
-        } else{
-            password.style.border = '1px solid red';
-            small[4].innerHTML = `Minimimo 8 = 1 núnero, 1 minúscula, 1 mayúscula y 1 caracter especial`;
-        }
-    }else {
-        password.style.border = '1px solid black';
-        small[4].innerHTML = '';
-    }
-});
+// nombre.addEventListener('keyup', ()=>{
+//         const valorNombre = nombre.value;
+//         const validacionNombre = validarTexto(valorNombre);
+//         if(valorNombre.length > 0){
+//             if(validacionNombre === true){
+//                 nombre.style.border = '1px solid green';
+//                 small[0].innerHTML = ' ';
+//             } else{
+//                 nombre.style.border = '1px solid red';
+//                 small[0].innerHTML = `Solo puede contener texto`;
+//             }
+//         }else {
+//             nombre.style.border = '1px solid black';
+//             small[0].innerHTML = ' ';
+//         }
+// });
 
-password2.addEventListener('change', ()=>{
-    const valorPassword2 = password2.value;
-    if(valorPassword2 == valorPassword){
-        password2.style.border = '1px solid green';
-        small[5].innerHTML = '';
-    } else{
-        password2.style.border = '1px solid red';
-        small[5].innerHTML = `Las contraseñas no son iguales`;
-    }
-});
+// apellido.addEventListener('keyup', ()=>{
+//     const valorApellido = apellido.value;
+//     const validacionNombre = validarTexto(valorApellido);
+//     if(valorApellido.length > 0){
+//         if(validacionNombre === true){
+//             apellido.style.border = '1px solid green';
+//             small[1].innerHTML = ' ';
+//         } else{
+//             apellido.style.border = '1px solid red';
+//             small[1].innerHTML = `Solo puede contener texto`;
+//         }
+//     }else {
+//         apellido.style.border = '1px solid black';
+//         small[1].innerHTML = ' ';
+//     }
+// });
 
-boton.addEventListener('click', ()=>{
-    if(check.checked === false){
-        small[7].innerHTML = 'Debe aceptar los términos y condiciones';
-    } else{
-        small[7].innerHTML = '';
-    }
-});
+// dni.addEventListener('keyup', ()=>{
+//     const valorDni = dni.value;
+//     const validacionDni = validarNumero(valorDni);
+//     if(valorDni.length > 0){
+//         if(validacionDni === true && valorDni.length == 8){
+//             dni.style.border = '1px solid green';
+//             small[2].innerHTML = ' ';
+//         } else{
+//             dni.style.border = '1px solid red';
+//             small[2].innerHTML = `Debe contener 8 números`;
+//         }
+//     }else {
+//         dni.style.border = '1px solid black';
+//         small[2].innerHTML = ' ';
+//     }
+// });
 
-check.addEventListener('click', ()=>{
-    small[7].innerHTML = '';
-})
+// email.addEventListener('keyup', ()=>{
+//     const valorEmail = email.value;
+//     const validacionEmail = validarEmail(valorEmail);
+//     if(valorEmail.length > 0){
+//         if(validacionEmail === true){
+//             email.style.border = '1px solid green';
+//             small[3].innerHTML = '';
+//         }else{
+//             email.style.border = '1px solid red';
+//             small[3].innerHTML = `El formato del email no es válido`;
+//         }
+//     }else {
+//         email.style.border = '1px solid black';
+//         small[3].innerHTML = '';
+//     }
+// })
+
+
+// password.addEventListener('change', ()=>{
+//     valorPassword = password.value;
+//     const validacionPassword = validarPassword(valorPassword);
+//     if(valorPassword.length > 0){
+//         if(validacionPassword === true){
+//             password.style.border = '1px solid green';
+//             small[4].innerHTML = '';
+//         } else{
+//             password.style.border = '1px solid red';
+//             small[4].innerHTML = `Minimimo 8 = 1 núnero, 1 minúscula, 1 mayúscula y 1 caracter especial`;
+//         }
+//     }else {
+//         password.style.border = '1px solid black';
+//         small[4].innerHTML = '';
+//     }
+// });
+
+// password2.addEventListener('change', ()=>{
+//     const valorPassword2 = password2.value;
+//     if(valorPassword2 == valorPassword){
+//         password2.style.border = '1px solid green';
+//         small[5].innerHTML = '';
+//     } else{
+//         password2.style.border = '1px solid red';
+//         small[5].innerHTML = `Las contraseñas no son iguales`;
+//     }
+// });
+
+// boton.addEventListener('click', ()=>{
+//     if(check.checked === false){
+//         small[7].innerHTML = 'Debe aceptar los términos y condiciones';
+//     } else{
+//         small[7].innerHTML = '';
+//     }
+// });
+
+// check.addEventListener('click', ()=>{
+//     small[7].innerHTML = '';
+// })
